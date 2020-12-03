@@ -1,10 +1,3 @@
-2 # 테스트 케이스
-5
-3 2
-1 4
-4 1
-2 3
-5 5
 n_test = int(input('# Test Case:')) # 테스트 케이스
 score_all_test = []
 for _ in range(n_test):
