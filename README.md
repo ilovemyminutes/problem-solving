@@ -97,3 +97,6 @@ od.move_to_end('b')
 print(from_keys)
 >>> OrderedDict([('a', None), ('c', None), ('d', None), ('b', None)])
 ```
+
+## Attitude
+* 한 방법에만 몰두하면 시야가 좁아진다. 때로는 뒤로 물러나서 큰 그림을 다시 볼 것.
