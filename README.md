@@ -52,7 +52,7 @@ queue.popleft()
 ```
 #### Counter
 * 원소별 빈도를 구할 떄 유용한 클래스
-* dict의 하위 클래스로, O(n)의 시간복잡도
+* dict의 하위 클래스, O(n)
 ```python
 from collections import Counter
 
@@ -64,7 +64,7 @@ print(Counter(sample_str))
 >>> Counter({'a': 4, 'b': 2, 'd': 2, 'c': 7})
 ```
 #### OrderedDict
-* dict 자료형에 순서를 부여한 클래스
+* dict 자료형에 순서를 부여한 클래스, O(n)
 * 순서를 활용하여 dict에 접근해야 할 때 유용
 * .fromkeys(): iterable한 객체를 받아 각 원소를 키값으로 하는 OrderedDict 객체 생성
 * .move_to_end(): 키값을 받아 해당 아이템을 맨 끝으로 이동
