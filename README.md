@@ -1,6 +1,4 @@
-# Useful Things
-* 알고리즘을 공부하며 얻은 유용한 것들을 정리
-
+# Tips
 ## Algorithms
 ### 정렬
 #### 퀵정렬
