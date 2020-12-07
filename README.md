@@ -66,6 +66,10 @@ print(Counter(sample_str))
 >>> Counter({'a': 4, 'b': 2, 'd': 2, 'c': 7})
 ```
 #### OrderedDict
+* dict 자료형에 순서를 부여한 클래스
+* 순서를 활용하여 dict에 접근해야 할 때 유용
+* .fromkeys(): iterable한 객체를 받아 각 원소를 키값으로 하는 OrderedDict 객체 생성
+* .move_to_end(): 키값을 받아 해당 아이템을 맨 끝으로 이동
 ```python
 from collections import OrderedDict
 example = {'banana': 3, 'apple': 4, 'pear': 1, 'orange':2}
