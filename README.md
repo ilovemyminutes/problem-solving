@@ -107,6 +107,7 @@ print(from_keys)
 #### reduce
 * iterable한 객체에 반복적인 연산을 수행하여 하나의 값을 반환
 ```python
+from functools import reduce
 print(reduce(sum, range(1, 11))) # 1부터 10까지의 합
 >>> 55
 ```
@@ -115,6 +116,10 @@ print(reduce(sum, range(1, 11))) # 1부터 10까지의 합
 #### mul
 * 곱셈 연산
 * redue 함수와 사용할 때 유용하다.
+```python
+import operator as op
+print(reduce(op.mul, range(1,5))) # 1부터 4까지의 곱
+>>> 24
 
 ## Attitude
 * 한 방법에만 몰두하면 시야가 좁아진다. 때로는 뒤로 물러나서 큰 그림을 다시 볼 것.
