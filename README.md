@@ -31,6 +31,8 @@ def quick_sort(array, start:'시작 index', end:'끝 index'):
     quick_sort(array, start, right-1)
     quick_sort(array, right+1, end)
 ```
+#### etc
+* 다중정렬 진행시, 뒷 정렬이 앞선 정렬의 순서를 망가뜨리지 않음
 
 ## Functions
 ### collections
@@ -62,6 +64,9 @@ print(Counter(sample_list))
 >>> Counter({'a': 2, 'b': 2, 'c': 2, 'd': 1, 'e': 1})
 print(Counter(sample_str))
 >>> Counter({'a': 4, 'b': 2, 'd': 2, 'c': 7})
+counter = Counter(sample_str)
+print(counter.most_common(n=2))
+>>> [('a', 4), ('b',2)]
 ```
 #### OrderedDict
 * dict 자료형에 순서를 부여한 클래스, O(n)
@@ -98,5 +103,20 @@ print(from_keys)
 >>> OrderedDict([('a', None), ('c', None), ('d', None), ('b', None)])
 ```
 
+### functools
+#### reduce
+* iterable한 객체에 반복적인 연산을 수행하여 하나의 값을 반환
+```python
+print(reduce(sum, range(1, 11))) # 1부터 10까지의 합
+>>> 55
+```
+
+### operator
+#### mul
+* 곱셈 연산
+* redue 함수와 사용할 때 유용하다.
+
 ## Attitude
 * 한 방법에만 몰두하면 시야가 좁아진다. 때로는 뒤로 물러나서 큰 그림을 다시 볼 것.
+* 표준 라이브러리를 잘 사용하면 좋을 것 같네.
+* 잘 하고 있어.

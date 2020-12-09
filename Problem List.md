@@ -1,0 +1,39 @@
+## 프로그래머스 기출
+* 난이도: Level 2, Level 3
+* 언어: Python3
+```
+https://programmers.co.kr/learn/courses/30/lessons/62048
+https://programmers.co.kr/learn/courses/30/lessons/49993
+https://programmers.co.kr/learn/courses/30/lessons/17676
+https://programmers.co.kr/learn/courses/30/lessons/60057
+https://programmers.co.kr/learn/courses/30/lessons/60058
+https://programmers.co.kr/learn/courses/30/lessons/60059
+https://programmers.co.kr/learn/courses/30/lessons/60061
+https://programmers.co.kr/learn/courses/30/lessons/60062
+https://programmers.co.kr/learn/courses/30/lessons/60063
+https://programmers.co.kr/learn/courses/30/lessons/64065
+https://programmers.co.kr/learn/courses/30/lessons/64064
+https://programmers.co.kr/learn/courses/30/lessons/49994
+https://programmers.co.kr/learn/courses/30/lessons/67257
+https://programmers.co.kr/learn/courses/30/lessons/64062
+https://programmers.co.kr/learn/courses/30/lessons/67258
+https://programmers.co.kr/learn/courses/30/lessons/12978
+https://programmers.co.kr/learn/courses/30/lessons/67259
+https://programmers.co.kr/learn/courses/30/lessons/12977
+https://programmers.co.kr/learn/courses/30/lessons/12979
+https://programmers.co.kr/learn/courses/30/lessons/12980
+https://programmers.co.kr/learn/courses/30/lessons/12987
+https://programmers.co.kr/learn/courses/30/lessons/12981
+https://programmers.co.kr/learn/courses/30/lessons/17677
+https://programmers.co.kr/learn/courses/30/lessons/17678
+https://programmers.co.kr/learn/courses/30/lessons/17679
+https://programmers.co.kr/learn/courses/30/lessons/17680
+https://programmers.co.kr/learn/courses/30/lessons/42888
+https://programmers.co.kr/learn/courses/30/lessons/42890
+https://programmers.co.kr/learn/courses/30/lessons/42892
+https://programmers.co.kr/learn/courses/30/lessons/42893
+https://programmers.co.kr/learn/courses/30/lessons/17683
+https://programmers.co.kr/learn/courses/30/lessons/17684
+https://programmers.co.kr/learn/courses/30/lessons/17686
+https://programmers.co.kr/learn/courses/30/lessons/17687
+```
