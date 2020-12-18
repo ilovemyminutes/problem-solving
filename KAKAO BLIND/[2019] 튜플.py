@@ -1,6 +1,5 @@
 '''https://programmers.co.kr/learn/courses/30/lessons/64065?language=python3
 '''
-
 from collections import deque
 
 def solution(s):
@@ -30,4 +29,5 @@ def parse(s) -> list:
     return temp
 
 def get_num(temp_set):
+    '''원소 하나짜리 집합에서 정수를 추출하는 함수'''
     return int(list(temp_set)[0])

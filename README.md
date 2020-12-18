@@ -31,6 +31,17 @@ def quick_sort(array, start:'시작 index', end:'끝 index'):
     quick_sort(array, start, right-1)
     quick_sort(array, right+1, end)
 ```
+### 자료 구조
+#### Stack
+* 프링글스 통을 떠올리면 편함
+* LIFO(Last In First Out): 가장 마지막 데이터가 가장 빨리 나간다.
+* 파이썬의 list 자료형으로 구현 가능
+
+#### Que
+* 양쪽 모두 뚫린 관을 떠올리면 편함
+* FIFO(First in First Out): : 제일 먼저 입력된 데이터가 제일 먼저 나간다.
+* 파이썬의 deque 모듈로 구현 가능
+
 #### etc
 * 다중정렬 진행시, 뒷 정렬이 앞선 정렬의 순서를 망가뜨리지 않음
 
@@ -123,6 +134,7 @@ print(reduce(op.mul, range(1,5))) # 1부터 4까지의 곱
 ```
 
 ## Attitude
-* 한 방법에만 몰두하면 시야가 좁아진다. 때로는 뒤로 물러나서 큰 그림을 다시 볼 것.
+* 한 방법에만 몰두하면 시야가 좁아진다. 때로는 큰 그림을 볼 것.
 * 표준 라이브러리 유연하게 사용할 것
 * '너무 무식하게 짰나?'라는 의심은 버리기
+* 재귀 자꾸 쓰려고 해보자
