@@ -3,7 +3,6 @@
 """
 from collections import deque
 
-
 def solution(bridge_length, weight, truck_weights):
     timeline = [0 for i in range(len(truck_weights) * bridge_length + 1)]
     truck_weights = deque([(idx, t) for idx, t in enumerate(truck_weights)])
