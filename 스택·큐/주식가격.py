@@ -1,6 +1,7 @@
-'''https://programmers.co.kr/learn/courses/30/lessons/42584'''
+"""https://programmers.co.kr/learn/courses/30/lessons/42584"""
 
 from collections import deque
+
 
 def solution(prices):
     prices = deque(prices)
