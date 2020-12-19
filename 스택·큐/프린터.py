@@ -1,5 +1,6 @@
-from collections import deque
+'''https://programmers.co.kr/learn/courses/30/lessons/42587'''
 
+from collections import deque
 
 def solution(priorities, location):
     priorities = deque([(idx, p) for idx, p in enumerate(priorities)])
