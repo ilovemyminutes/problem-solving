@@ -33,13 +33,17 @@ def quick_sort(array, start:'시작 index', end:'끝 index'):
 ```
 #### 힙정렬
 
+* 데이터를 **정렬된 상태**로 저장하기 위해 사용
 * 힙 자료구조를 활용한 정렬 알고리즘, O(NlogN)
 * 'N개의 데이터를 힙에 넣었다가 모두 꺼내는 작업 <=> 정렬'
 * 파이썬의 힙 자료구조는 '최소 힙' 기반으로 구현되어 있음
+* Great Ref. https://www.daleseo.com/python-heapq/
 
 ```python
 import heapq
 
+# 힙 정렬 예시
+# 파이썬의 힙은 최소 힙 기반
 def heapsort(iterable):
     h = list()
     result = list()
@@ -50,6 +54,36 @@ def heapsort(iterable):
     for i in range(len(h)): # 힙에 삽입된 모든 원소를 차례대로 꺼내 담기
         result.append(heapq.heappop(h))
     return result
+
+# 리스트를 힙으로 변환하기
+heap = [4, 1, 7, 3, 8, 5]
+heapq.heapify(heap)
+print(heap) # [1, 3, 5, 4, 8, 7]
+
+
+# 최대 힙 구현
+# heapq 모듕은 '최소 힙' 기반
+# 원소가 튜플 형태인 경우, 첫번째 원소를 기준으로 정렬되는 것을 이용하여 약간의 트릭을 준다
+import heapq
+nums = [4, 1, 7, 3, 8, 5]
+heap = []
+for num in nums:
+    heapq.heappush(heap, (-num, num))  # Trick: (우선 순위, 값) 
+
+while heap:
+    print(heapq.heappop(heap)[1])  # 8, 7, 5, ...
+    
+# k번째 최소/최대값
+def smallest_k(nums, k):
+    heap = []
+    for num in nums:
+        heapq.heappush(heap, num)
+    min_k = None
+    for _ in range(k):
+        min_k = heapq.heappop(heap) # k번째로 작은 원소가 루트 노드가 될 때까지 pop 실행
+    return min_k
+
+print(smallest_k([4, 1, 7, 3, 8, 5], 3)) # 4
 ```
 
 
