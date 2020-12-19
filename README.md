@@ -31,16 +31,48 @@ def quick_sort(array, start:'시작 index', end:'끝 index'):
     quick_sort(array, start, right-1)
     quick_sort(array, right+1, end)
 ```
+#### 힙정렬
+
+* 힙 자료구조를 활용한 정렬 알고리즘, O(NlogN)
+* 'N개의 데이터를 힙에 넣었다가 모두 꺼내는 작업 <=> 정렬'
+* 파이썬의 힙 자료구조는 '최소 힙' 기반으로 구현되어 있음
+
+```python
+import heapq
+
+def heapsort(iterable):
+    h = list()
+    result = list()
+    
+    for value in iterable: # 모든 원소를 차례대로 힙에 삽입
+        heapq.heappush(h, value)
+        
+    for i in range(len(h)): # 힙에 삽입된 모든 원소를 차례대로 꺼내 담기
+        result.append(heapq.heappop(h))
+    return result
+```
+
+
+
 ### 자료 구조
+
 #### Stack
 * 프링글스 통을 떠올리면 편함
 * LIFO(Last In First Out): 가장 마지막 데이터가 가장 빨리 나간다.
 * 파이썬의 list 자료형으로 구현 가능
 
-#### Que
+#### Queue
 * 양쪽 모두 뚫린 관을 떠올리면 편함
 * FIFO(First in First Out): : 제일 먼저 입력된 데이터가 제일 먼저 나간다.
 * 파이썬의 deque 모듈로 구현 가능
+
+#### Priority Queue
+
+* 우선순위가 가장 높은 데이터를 가장 먼저 삭제하는 자료구조. 데이터를 우선순위에 따라 처리하고 싶을 때 사용
+* 스택은 가장 늦게 온 것이 먼저 나가고, 큐는 가장 먼저 온 것이 먼저 나가는 것처럼, 우선순위 큐는 가장 우선순위가 높은 것이 먼저 나감
+* 리스트로 구현 - 삽입 O(1) / 삭제 O(N)
+* 힙(Heap)으로 구현 - 삽입 O(logN) / 삭제 O(logN)
+* N개의 데이터를 힙에 넣었다가 모두 꺼내는 작업 <=> 정렬('힙 정렬'), O(NlogN)
 
 #### etc
 * 다중정렬 진행시, 뒷 정렬이 앞선 정렬의 순서를 망가뜨리지 않음
@@ -71,13 +103,14 @@ from collections import Counter
 
 sample_list = ['a', 'a', 'b', 'b', 'c', 'c', 'd', 'e']
 sample_str = 'aaaabbddccccccc'
-print(Counter(sample_list))
->>> Counter({'a': 2, 'b': 2, 'c': 2, 'd': 1, 'e': 1})
-print(Counter(sample_str))
->>> Counter({'a': 4, 'b': 2, 'd': 2, 'c': 7})
-counter = Counter(sample_str)
-print(counter.most_common(n=2))
->>> [('a', 4), ('b',2)]
+
+>>> print(Counter(sample_list))
+Counter({'a': 2, 'b': 2, 'c': 2, 'd': 1, 'e': 1})
+>>> print(Counter(sample_str))
+Counter({'a': 4, 'b': 2, 'd': 2, 'c': 7})
+>>> counter = Counter(sample_str)
+>>> print(counter.most_common(n=2))
+[('a', 4), ('b',2)]
 ```
 #### OrderedDict
 * dict 자료형에 순서를 부여한 클래스, O(n)
@@ -88,30 +121,30 @@ print(counter.most_common(n=2))
 from collections import OrderedDict
 example = {'banana': 3, 'apple': 4, 'pear': 1, 'orange':2}
 
-od = OrderedDict(example)
-print(od)
->>> OrderedDict([('banana', 3), ('apple', 4), ('pear', 1), ('orange', 2)])
+>>> od = OrderedDict(example)
+>>> print(od)
+OrderedDict([('banana', 3), ('apple', 4), ('pear', 1), ('orange', 2)])
 
 od_sort = OrderedDict(sorted(example.items(), key=lambda x: x[-1]))
 print(od_sort.keys(), od_sort.values())
 >>> odict_keys(['pear', 'orange', 'banana', 'apple']) odict_values([1, 2, 3, 4])
 
 # popitem(): 
-key, value = temp2.popitem()
-print('KEY:' key, 'VALUE:', value, 'OD:', temp2)
->>> KEY: apple VALUE: 4 OD: OrderedDict([('pear', 1), ('orange', 2), ('banana', 3)])
+>>> key, value = temp2.popitem()
+>>> print('KEY:' key, 'VALUE:', value, 'OD:', temp2)
+KEY: apple VALUE: 4 OD: OrderedDict([('pear', 1), ('orange', 2), ('banana', 3)])
 
-od = OrderedDict.fromkeys([1,2,3,])
-print(od)
->>> OrderedDict([(1, None), (2, None), (3, None)])
+>>> od = OrderedDict.fromkeys([1,2,3,])
+>>> print(od)
+OrderedDict([(1, None), (2, None), (3, None)])
 
-od = OrderedDict.fromkeys('abcd')
-print(od)
->>> OrderedDict([('a', None), ('b', None), ('c', None), ('d', None)])
+>>> od = OrderedDict.fromkeys('abcd')
+>>> print(od)
+OrderedDict([('a', None), ('b', None), ('c', None), ('d', None)])
 
-od.move_to_end('b')
-print(from_keys)
->>> OrderedDict([('a', None), ('c', None), ('d', None), ('b', None)])
+>>> od.move_to_end('b')
+>>> print(from_keys)
+OrderedDict([('a', None), ('c', None), ('d', None), ('b', None)])
 ```
 
 ### functools
@@ -119,8 +152,8 @@ print(from_keys)
 * iterable한 객체에 반복적인 연산을 수행하여 하나의 값을 반환
 ```python
 from functools import reduce
-print(reduce(sum, range(1, 11))) # 1부터 10까지의 합
->>> 55
+>>> print(reduce(sum, range(1, 11))) # 1부터 10까지의 합
+55
 ```
 
 ### operator
@@ -129,8 +162,8 @@ print(reduce(sum, range(1, 11))) # 1부터 10까지의 합
 * redue 함수와 사용할 때 유용하다.
 ```python
 import operator as op
-print(reduce(op.mul, range(1,5))) # 1부터 4까지의 곱
->>> 24
+>>> (reduce(op.mul, range(1,5))) # 1부터 4까지의 곱
+24
 ```
 
 ## Attitude
