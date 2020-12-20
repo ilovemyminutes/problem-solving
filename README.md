@@ -86,8 +86,6 @@ def smallest_k(nums, k):
 print(smallest_k([4, 1, 7, 3, 8, 5], 3)) # 4
 ```
 
-
-
 ### 자료 구조
 
 #### Stack
