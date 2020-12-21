@@ -111,7 +111,7 @@ print(smallest_k([4, 1, 7, 3, 8, 5], 3)) # 4
 * Call by Reference / Call by Value
     * Call by Reference: 인자로 받은 변수의 **주소값**을 전달하는 방식
     * Call by Value: 변수를 **복사**한 값을 전달하는 방식
-    * 파이쎤: Call by Object-reference(객체 속성에 따라 방식이 달라진다)
+    * Python: Call by Object-reference(객체 속성에 따라 방식이 달라진다)
         * Immutable(`tuple`, `int`, `float`, `str` 등): Call by Value. 함수 내에서 global 변수를 수정할 수 없음
         * Mutable(`list`, `dict` 등): Call by Reference. 함수 내에서 global 변수를 수정할 수 없음
 
