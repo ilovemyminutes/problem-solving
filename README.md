@@ -1,5 +1,88 @@
 # Tips
 ## Algorithms
+
+### DFS·BFS
+
+#### DFS: 깊이 우선 탐색
+
+* 루트 노드에서 분기마다 최대 깊이까지 탐색하는 방법
+* 모든 노드를 방문할 떄 사용
+* stack 자료 구조 사용(`list`)
+
+```python
+graph = {
+    'A': ['B'],
+    'B': ['A', 'C', 'H'],
+    'C': ['B', 'D'],
+    'D': ['C', 'E', 'G'],
+    'E': ['D', 'F'],
+    'F': ['E'],
+    'G': ['D'],
+    'H': ['B', 'I', 'J', 'M'],
+    'I': ['H'],
+    'J': ['H', 'K'],
+    'K': ['J', 'L'],
+    'L': ['K'],
+    'M': ['H']
+}
+
+def dfs(graph, start_node):
+     visit = list()
+     stack = list()
+
+     stack.append(start_node)
+
+     while stack:
+         node = stack.pop()
+         if node not in visit:
+             visit.append(node)
+             stack.extend(graph[node])
+
+     return visit
+```
+
+
+
+#### BFS: 너비 우선 탐색
+
+* 루트 노드에서 시작해서 인접한 노드를 먼저 탐색하는 방법
+* 두 노드 간 최단 경로 또는 임의 경로를 찾고 싶을 때 사용
+* queue 자료 구조를 사용
+
+```python
+graph = {
+    'A': ['B'],
+    'B': ['A', 'C', 'H'],
+    'C': ['B', 'D'],
+    'D': ['C', 'E', 'G'],
+    'E': ['D', 'F'],
+    'F': ['E'],
+    'G': ['D'],
+    'H': ['B', 'I', 'J', 'M'],
+    'I': ['H'],
+    'J': ['H', 'K'],
+    'K': ['J', 'L'],
+    'L': ['K'],
+    'M': ['H']
+}
+
+def bfs(graph, start_node):
+     visit = list()
+     queue = list()
+
+     queue.append(start_node) # 시작 노드 설정
+
+     while queue: # queue에 더이상 담을 노드가 없을 떄까지, 즉, 모두 방문할 떄까지 루프 진행
+         node = queue.pop(0) 
+         if node not in visit: # 방문하지 않은 경우 방문 처리 & 
+             visit.append(node)
+             queue.extend(graph[node])
+
+     return visit
+```
+
+
+
 ### 정렬
 #### 퀵정렬
 * 가장 많이 활용되는 정렬 알고리즘
