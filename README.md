@@ -196,7 +196,7 @@ print(smallest_k([4, 1, 7, 3, 8, 5], 3)) # 4
     * Call by Value: 변수를 **복사**한 값을 전달하는 방식
     * Python: Call by Object-reference(객체 속성에 따라 방식이 달라진다)
         * Immutable(`tuple`, `int`, `float`, `str` 등): Call by Value. 함수 내에서 global 변수를 수정할 수 없음
-        * Mutable(`list`, `dict` 등): Call by Reference. 함수 내에서 global 변수를 수정할 수 없음
+        * Mutable(`list`, `dict` , `set`등): Call by Reference. 함수 내에서 global 변수를 수정할 수 있음
 
 ## Functions
 ### collections
@@ -292,3 +292,4 @@ import operator as op
 * 표준 라이브러리 유연하게 사용할 것
 * '너무 무식하게 짰나?'라는 의심은 버리기
 * 재귀 자꾸 쓰려고 해보자
+    * 너무 재귀를 써야한다고 생각하지는 말자 

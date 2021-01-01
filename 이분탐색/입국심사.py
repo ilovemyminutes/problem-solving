@@ -37,3 +37,11 @@ def solution(n, times):
 #             print('딱 맞아', left, mid, right)
 #             break
 #     return mid
+
+#%%
+from functools import reduce
+def mul(start, end):
+    return reduce(lambda x, y: x * y, range(1, n+1))
+
+reduce(lambda x, y: x * y, range(1, n+1))
+reduce(lambda x, y: x * y, range(1, n+1))
