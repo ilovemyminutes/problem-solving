@@ -1,5 +1,6 @@
 #%%
 '''
+https://programmers.co.kr/learn/courses/30/lessons/43163
 1. 한 번에 한 개의 알파벳만 바꿀 수 있습니다.
 2. words에 있는 단어로만 변환할 수 있습니다.
 
@@ -8,7 +9,7 @@ hit -> hot -> dot -> dog -> cog와 같이 4단계를 거쳐 변환할 수 있습
 '''
 begin = 'hit' # 루트 노드
 target = 'cog'
-words = ['hot', 'dot', 'dog', 'lot', 'log', 'cog']
+words = ['hot', 'dot', 'dog', 'lot', 'loh', 'cog']
 
 def _get_diff(word1, word2):
     return sum([i != j for i, j in zip(word1, word2)])
@@ -35,13 +36,32 @@ def dfs(begin, target, words, visited):
     
 
 def solution(begin, target, words):
-    global answer
-
     if target not in words:
         return 0
-    visited = [0] * len(words)
-    dfs(begin, target, words, visited)
-    return answer
+    else:
+        answer = 0
+        def dfs(begin, target, words, visited):
+            nonlocal answer
+            stacks = [begin] 
+            while stacks: # 모든 탐색이 이루어질 때까지
+                stack = stacks.pop(); print(stack, stacks, end='\t')
+
+                if stack == target: # 뽑은게 타깃과 같을 경우
+                    return answer
+
+                for idx, word in enumerate(words):
+                    if _get_diff(stack, word) == 1:
+                        if visited[idx] == 1: # 이미 방문한 경우 스킵
+                            continue
+                        print(word, end=', ')
+                        visited[idx] = 1
+                        stacks.append(word)
+                print()
+                answer += 1
+
+        visited = [0] * len(words)
+        dfs(begin, target, words, visited)
+        return answer
 
 solution(begin, target, words)
 #%%
