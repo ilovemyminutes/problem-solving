@@ -1,22 +1,25 @@
-'''https://programmers.co.kr/learn/courses/30/lessons/43238'''
+"""https://programmers.co.kr/learn/courses/30/lessons/43238"""
+
+
 def solution(n, times):
     left = 1
-    right = max(times) * n 
-    answer = 0 
+    right = max(times) * n
+    answer = 0
     while left <= right:
-        mid = (left + right) // 2 
-        pseudo_n = 0 
-        for t in times: 
+        mid = (left + right) // 2
+        pseudo_n = 0
+        for t in times:
             pseudo_n += mid // t
-            if pseudo_n >= n: # 넘치면 제한 시간을 줄임
-                answer = mid 
-                right = mid - 1 
-                break 
-        if pseudo_n < n : 
-            left = mid + 1 
+            if pseudo_n >= n:  # 넘치면 제한 시간을 줄임
+                answer = mid
+                right = mid - 1
+                break
+        if pseudo_n < n:
+            left = mid + 1
     return answer
 
-'''실패'''
+
+"""실패"""
 # def solution(n, times):
 #     if len(times) == 1:
 #         return times[0] * n
@@ -40,8 +43,11 @@ def solution(n, times):
 
 #%%
 from functools import reduce
-def mul(start, end):
-    return reduce(lambda x, y: x * y, range(1, n+1))
 
-reduce(lambda x, y: x * y, range(1, n+1))
-reduce(lambda x, y: x * y, range(1, n+1))
+
+def mul(start, end):
+    return reduce(lambda x, y: x * y, range(1, n + 1))
+
+
+reduce(lambda x, y: x * y, range(1, n + 1))
+reduce(lambda x, y: x * y, range(1, n + 1))
