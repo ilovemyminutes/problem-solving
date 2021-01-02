@@ -11,10 +11,8 @@ def solution(number, k):
     
     if k!= 0:
         stack = stack[:-k]
-        
-    return ''.join(stack)
 
-print(solution(number, k))
+    return ''.join(stack)
 #%%
 def get_start(removed_idx, num_list):
     if removed_idx == 0:
