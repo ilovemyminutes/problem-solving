@@ -17,7 +17,7 @@ def _get_adj(m: '가로', n:'세로', x, y):
     elif y == n-1:
         return (x-1, y), (x+1, y), (x, y-1)
     else:
-        return (x-1, y), (x, y-1), (x+1, y), (x, y+1)
+        return (x-1, y), (x, y-1), (x+1, y), (x, y+1)  |}
 
 n_tests = int(input())
 m_list, n_list, k_list = [], [], []
@@ -58,3 +58,7 @@ for t in range(n_tests):
                     dfs(graph, visited, (m, n), (x, y))
                     answer += 1
     print(answer)
+
+#%%
+temp = [1,2,3,4]
+temp.pop(0)
