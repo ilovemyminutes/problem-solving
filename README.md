@@ -92,7 +92,10 @@ def bfs(graph, start_node):
 
 
 ### 정렬
+* 오름차순이 기본값
+
 #### 퀵정렬
+
 * 가장 많이 활용되는 정렬 알고리즘
 * '피벗을 잡아, 큰 데이터와 작은 데이터의 위치를 바꾼다'
     * 첫 번째 지점을 피벗으로 설정
@@ -285,7 +288,30 @@ from functools import reduce
 55
 ```
 
+#### cmp_to_key
+
+* 커스텀 비교 규칙을 통한 정렬이 가능
+* Reference. [python 내 마음대로 정렬(sort)!]([https://velog.io/@sparkbosing/python-%EB%82%B4-%EB%A7%88%EC%9D%8C%EB%8C%80%EB%A1%9C-%EC%A0%95%EB%A0%ACsort](https://velog.io/@sparkbosing/python-내-마음대로-정렬sort))
+* 다음의 비교 함수를 바탕으로 정렬을 하는 것이 가능해짐
+
+```python
+def foo(x, y): # 2차원 벡터의 정렬을 진행할 때
+    if x[0] == y[0]: # 앞 성분 값이 같으면
+        return x[1] - y[1] # 뒷 성분 차를 기준으로 비교하겠다
+    else: # 다르면
+        return x[0] - y[0] # 앞 성분으로 비교하겠다
+```
+
+```python
+from functools import cmp_to_key
+arr = [(1,3), (1,2), (1,4)]
+sorted(arr, key=cmp_to_key(foo)) # key 인자에 삽입하여 사용
+```
+
+
+
 ### operator
+
 #### mul
 * 곱셈 연산
 * redue 함수와 사용할 때 유용하다.
