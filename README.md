@@ -165,7 +165,7 @@ for num in nums:
     heapq.heappush(heap, (-num, num))  # Trick: (우선 순위, 값) 
 
 while heap:
-    print(heapq.heappop(heap)[1])  # 8, 7, 5, ...
+    print(heapq.heappop(heap)[1])  # 8, 7, 5, ... <- 뒷 성분을 가져오는 것 <=> 내림차순 정렬
     
 # k번째 최소/최대값
 def smallest_k(nums, k):
