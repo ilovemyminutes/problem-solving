@@ -1,4 +1,4 @@
-'''https://programmers.co.kr/learn/courses/30/lessons/42883'''
+"""https://programmers.co.kr/learn/courses/30/lessons/42883"""
 #%%
 def solution(number, k):
     stack = [number[0]]
@@ -8,17 +8,20 @@ def solution(number, k):
             k -= 1
             stack.pop()
         stack.append(num)
-    
-    if k!= 0:
+
+    if k != 0:
         stack = stack[:-k]
 
-    return ''.join(stack)
+    return "".join(stack)
+
+
 #%%
 def get_start(removed_idx, num_list):
     if removed_idx == 0:
         return 0
     else:
         return removed_idx - 1
+
 
 def solution(number, k):
     num_list = list(map(int, list(number)))
@@ -30,13 +33,13 @@ def solution(number, k):
             if idx == length - 1:
                 break
             else:
-                pre, post = num_list[idx], num_list[idx+1]
+                pre, post = num_list[idx], num_list[idx + 1]
                 if pre < post:
                     del num_list[idx]
                     pseudo_k += 1
                     start = get_start(idx, num_list)
                     break
-    return ''.join(list(map(str, num_list)))
+    return "".join(list(map(str, num_list)))
 
 
 # %%
@@ -45,17 +48,19 @@ def get_meta(number):
     combo = 1
     for idx, n in enumerate(number):
         if idx == len(number) - 1:
-            meta.append([int(n), combo]) # 값, 연속빈도
+            meta.append([int(n), combo])  # 값, 연속빈도
         else:
-            if n == number[idx+1]:
+            if n == number[idx + 1]:
                 combo += 1
             else:
-                meta.append([int(n), combo]) # 값, 연속빈도
+                meta.append([int(n), combo])  # 값, 연속빈도
                 combo = 1
     return meta
 
+
 def decode_meta(meta):
-    return ''.join(list(map(lambda x: str(x[0])*x[1], meta)))
+    return "".join(list(map(lambda x: str(x[0]) * x[1], meta)))
+
 
 def solution(number, k):
     meta = get_meta(number)
@@ -65,7 +70,7 @@ def solution(number, k):
             if idx == len(meta) - 1:
                 break
             else:
-                pre, post = meta[idx], meta[idx+1]
+                pre, post = meta[idx], meta[idx + 1]
                 if pre[0] < post[0]:
                     pre[-1] -= 1
                     if pre[-1] == 0:
