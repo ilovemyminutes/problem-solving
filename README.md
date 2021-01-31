@@ -180,6 +180,39 @@ def smallest_k(nums, k):
 print(smallest_k([4, 1, 7, 3, 8, 5], 3)) # 4
 ```
 
+### Dynamic Programming(동적 계획법)
+
+- 메모리를 적절히 사용하여 수행 시간 효율성을 비약적으로 향상시키는 방법
+- Problem과 Sub-problem을 만드는 것이 핵심!
+- 이미 계산된 결과는 별도의 메모리 영역(table)에 저장하여 다시 계산하지 않도록 함
+- 일반적으로 Top down·Bottom up의 2가지 방식으로 구성
+- 문제가 다음을 만족할 때 사용
+  1. 최적 부분 구조(optimal substructure): <u>큰 문제를 작은 문제로 나눌 수 있으며</u> 작은 문제의 답을 모아서 큰 문제를 해결
+  2. 중복되는 부분 문제(overlapping subproblem): 동일한 <u>작은 문제를 반복적</u>으로 해결
+- [참고] 단순재귀를 활용한 피보나치 수열: 지수 시간 복잡도 - 중복되는 부분에 대한 문제때문에 비효율적
+
+#### Top Down
+
+- 재귀함수 활용: 큰 문제를 해결함에 있어서 작은 문제를 재귀적으로 호출하여 해결
+- 메모이제이션(memoization): 한번 계산한 결과를 메모리 공간에 메모하는 방법
+  - 같은 문제를 다시 호출하면 메모했던 결과를 그대로 가져옴
+  - 값을 기록한다는 점에서 **캐싱(caching)**이라도고 함
+  - 이전에 계산된 결과를 일시적으로 기록해 놓는 넓은 개념으로, 엄밀하게는 메모이제이션 != 다이나믹 프로그래밍
+
+#### Bottom Up
+
+- 작은 문제를 해결해나가면서 먼저 해결한 문제로 큰 문제 해결
+- 반복문을 활용하여 구현
+- 전통적인 다이나믹 프로그래밍 방식
+  - 결과 저장용 리스트는 보통 'DP 테이블'이라고 부름
+
+### Back Tracking
+
+- 모든 경우의 수를 먼저 살펴보면서 decision space를 만들어나감
+  - 탐색 과정에서 불필요한 경우를 제거하면서 decision space를 구체화
+
+- Reference. [[알고리즘] Backtracking 이해하기]([https://jeongdowon.medium.com/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-backtracking-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-13492b18bfa1](https://jeongdowon.medium.com/알고리즘-backtracking-이해하기-13492b18bfa1))
+
 ### 자료 구조
 
 #### Stack
@@ -199,6 +232,10 @@ print(smallest_k([4, 1, 7, 3, 8, 5], 3)) # 4
 * 리스트로 구현 - 삽입 O(1) / 삭제 O(N)
 * 힙(Heap)으로 구현 - 삽입 O(logN) / 삭제 O(logN)
 * N개의 데이터를 힙에 넣었다가 모두 꺼내는 작업 <=> 정렬('힙 정렬'), O(NlogN)
+
+#### Bit Operation(비트 연산)
+
+
 
 #### etc
 * 다중정렬 진행시, 뒷 정렬이 앞선 정렬의 순서를 망가뜨리지 않음
