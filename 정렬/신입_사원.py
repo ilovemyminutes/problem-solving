@@ -3,8 +3,15 @@ import sys
 import copy
 
 def get_cumultive_minimum(rank: list) -> list:
-    global INTERVIEW
+    """면접 순위에 대한 누적 최소랭킹 리스트를 반환하는 함수
 
+    Args:
+        rank (list): 입력받은 순위 리스트
+
+    Returns:
+        list: 누적 최소랭킹 리스트
+    """    
+    global INTERVIEW
     answer = []
     for i in range(len(rank)):
         if i == 0:
