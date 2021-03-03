@@ -1,4 +1,4 @@
-'''https://www.acmicpc.net/problem/10814'''
+'''나이순 정렬, https://www.acmicpc.net/problem/10814'''
 import sys
 AGE, NAME = 0, 1
 n = int(input())

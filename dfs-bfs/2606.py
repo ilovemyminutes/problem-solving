@@ -1,4 +1,4 @@
-"""https://www.acmicpc.net/problem/2606"""
+"""바이러스, https://www.acmicpc.net/problem/2606"""
 n_nodes = int(input())
 n_links = int(input())
 graph = {i: [] for i in range(1, n_nodes + 1)}

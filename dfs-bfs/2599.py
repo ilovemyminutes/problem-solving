@@ -1,4 +1,4 @@
-"""문제 출처: https://www.acmicpc.net/problem/2599"""
+"""짝 정하기, https://www.acmicpc.net/problem/2599"""
 # 같은 초등학교 출신이 아닌 남학생과 여학생을 짝으로 정한다
 import copy
 

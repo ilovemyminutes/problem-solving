@@ -1,4 +1,4 @@
-"""https://www.acmicpc.net/problem/2667"""
+"""단지번호붙이기, https://www.acmicpc.net/problem/2667"""
 n = int(input())  # 지도 크기
 graph = list()
 for _ in range(n):

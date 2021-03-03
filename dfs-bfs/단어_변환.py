@@ -1,4 +1,3 @@
-#%%
 """
 https://programmers.co.kr/learn/courses/30/lessons/43163
 1. 한 번에 한 개의 알파벳만 바꿀 수 있습니다.

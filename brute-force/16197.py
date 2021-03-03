@@ -1,4 +1,4 @@
-'''https://www.acmicpc.net/problem/16197
+'''두 동전, https://www.acmicpc.net/problem/16197
 o: 동전
 .: 빈칸
 #: 벽

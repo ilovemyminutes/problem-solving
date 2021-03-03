@@ -1,4 +1,4 @@
-'''https://www.acmicpc.net/problem/1012'''
+'''유기농 배추, https://www.acmicpc.net/problem/1012'''
 def _get_zero_matrix(shape: tuple) -> list:
     m, n = shape # 가로 길이, 세로 길이
     return [[0 for _ in range(m)] for _ in range(n)]
