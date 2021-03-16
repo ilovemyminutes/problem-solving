@@ -27,8 +27,6 @@ def print_dfs(graph: dict, start: int) -> None:
 
 
 def print_bfs(graph: dict, start: int) -> None:
-    global EMPTY  # 노드의 시작 번호가 1인 것을 편리하게 활용하기 위함
-    global VISIT
     graph = _sort_graph(graph, reverse=False)
 
     bfs = []
