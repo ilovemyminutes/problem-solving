@@ -1,3 +1,4 @@
+"""DFS와 BFS, https://www.acmicpc.net/problem/1260"""
 import sys
 from collections import deque
 
