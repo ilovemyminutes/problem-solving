@@ -1,24 +1,62 @@
 import sys
-from collections import defaultdict
-n, m, v = map(int, input().split())
+from collections import deque
 
-graph = []
-for _ in range(m):
-    v1, v2 = map(int, sys.stdin.readline().split())
-    graph.append((v1, v2))
 
-graph.sort(key=lambda x: x[-1])
-graph.sort(key=lambda x: x[0])
+def _sort_graph(graph: dict, reverse: bool) -> dict:
+    for key in graph.keys():
+        graph[key].sort(reverse=reverse)
+    return graph
 
-adj_dict = {i: [] for i in range(1, n+1)}
-for v1, v2 in graph:
-    adj_dict[v1].append(v2)
 
-print(adj_dict)
+def print_dfs(graph: dict, start: int) -> None:
+    graph = _sort_graph(graph, reverse=True)
 
-def dfs(start, adj_dict):
+    dfs = []
     stack = [start]
+    visited = []
+    while stack:
+        origin = stack.pop()
+        if origin in visited:
+            continue
+        visited.append(origin)  # 방문 처리
+        dfs.append(str(origin))  # 경로 추가
+        for adj in graph[origin]:  # 미방문 노드 추가
+            if adj not in visited:
+                stack.append(adj)
+    sys.stdout.write(" ".join(dfs))
 
-    while True:
-        node = stack.pop()
-        adj_dict[node]
+
+def print_bfs(graph: dict, start: int) -> None:
+    global EMPTY  # 노드의 시작 번호가 1인 것을 편리하게 활용하기 위함
+    global VISIT
+    graph = _sort_graph(graph, reverse=False)
+
+    bfs = []
+    que = deque([start])
+    visited = []
+
+    while que:
+        origin = que.popleft()
+        if origin in visited:
+            continue
+
+        visited.append(origin)
+        bfs.append(str(origin))  # 경로 추가
+        for adj in graph[origin]:  # 미방문 노드 추가
+            if adj not in visited:
+                que.append(adj)
+    sys.stdout.write(" ".join(bfs))
+
+
+n, m, v = map(int, input().split())
+graph = {i: [] for i in range(1, n + 1)}
+for _ in range(m):
+    n1, n2 = map(int, sys.stdin.readline().split())
+    if n1 not in graph[n2]:
+        graph[n2].append(n1)
+    if n2 not in graph[n1]:
+        graph[n1].append(n2)
+
+print_dfs(graph, start=v)
+print()
+print_bfs(graph, start=v)
