@@ -3,7 +3,7 @@ def _get_zero_matrix(shape: tuple) -> list:
     m, n = shape # 가로 길이, 세로 길이
     return [[0 for _ in range(m)] for _ in range(n)]
 
-def _get_adj(m: '가로', n:'세로', x, y):
+def _get_adj(m: int, n:int, x, y):
     if x == 0 and y == 0:
         return (x+1, y), (x, y+1)
     elif x == m-1 and y == n-1:
