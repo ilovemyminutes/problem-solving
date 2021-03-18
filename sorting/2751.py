@@ -1,4 +1,4 @@
-'''수 정렬하기 2, https://www.acmicpc.net/problem/2751'''
+"""수 정렬하기 2, https://www.acmicpc.net/problem/2751"""
 import sys
 
 n = int(input())
@@ -10,4 +10,4 @@ for _ in range(n):
 numbers.sort()
 
 for number in numbers:
-    sys.stdout.write(str(number) + '\n')
+    sys.stdout.write(str(number) + "\n")

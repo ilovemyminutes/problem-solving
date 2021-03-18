@@ -1,7 +1,6 @@
-'''https://www.acmicpc.net/problem/10172'''
+"""https://www.acmicpc.net/problem/10172"""
 
-string = \
-r'''|\_/|
+string = r'''|\_/|
 |q p|   /}
 ( 0 )"""\
 |"^"`    |

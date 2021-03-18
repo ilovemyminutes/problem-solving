@@ -1,4 +1,4 @@
-'''좌표 정렬하기 2, https://www.acmicpc.net/problem/11651'''
+"""좌표 정렬하기 2, https://www.acmicpc.net/problem/11651"""
 
 import sys
 
@@ -15,5 +15,5 @@ numbers.sort(key=lambda x: x[FORMER])
 numbers.sort(key=lambda x: x[LATTER])
 
 for number in numbers:
-    output = f'{number[FORMER]} {number[LATTER]}'
-    sys.stdout.write(output + '\n')
+    output = f"{number[FORMER]} {number[LATTER]}"
+    sys.stdout.write(output + "\n")

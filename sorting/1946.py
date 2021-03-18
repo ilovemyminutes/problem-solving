@@ -2,6 +2,7 @@
 import sys
 import copy
 
+
 def get_cumultive_minimum(rank: list) -> list:
     """면접 순위에 대한 누적 최소랭킹 리스트를 반환하는 함수
 
@@ -10,7 +11,7 @@ def get_cumultive_minimum(rank: list) -> list:
 
     Returns:
         list: 누적 최소랭킹 리스트
-    """    
+    """
     global INTERVIEW
     answer = []
     for i in range(len(rank)):
@@ -20,7 +21,7 @@ def get_cumultive_minimum(rank: list) -> list:
             pseudo_MIN = rank[i][INTERVIEW]
             if pseudo_MIN < MIN:
                 MIN = pseudo_MIN
-        answer.append(MIN)    
+        answer.append(MIN)
     return answer
 
 

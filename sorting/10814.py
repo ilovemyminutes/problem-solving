@@ -1,5 +1,6 @@
-'''나이순 정렬, https://www.acmicpc.net/problem/10814'''
+"""나이순 정렬, https://www.acmicpc.net/problem/10814"""
 import sys
+
 AGE, NAME = 0, 1
 n = int(input())
 
@@ -11,6 +12,5 @@ for _ in range(n):
 register.sort(key=lambda x: x[AGE])
 
 for info in register:
-    output = f'{info[AGE]} {info[NAME]}'
-    sys.stdout.write(output + '\n')
-    
+    output = f"{info[AGE]} {info[NAME]}"
+    sys.stdout.write(output + "\n")

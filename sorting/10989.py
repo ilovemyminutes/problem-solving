@@ -1,6 +1,7 @@
-'''수 정렬하기 3, https://www.acmicpc.net/problem/10989'''
+"""수 정렬하기 3, https://www.acmicpc.net/problem/10989"""
 import sys
 from collections import defaultdict
+
 n = int(input())
 
 num_dict = defaultdict(int)
@@ -13,4 +14,4 @@ sorted_keys = sorted(list(num_dict.keys()))
 
 for idx, num in enumerate(sorted_keys):
     output = f"{num}\n" * num_dict[num]
-    print(output, end='')
+    print(output, end="")

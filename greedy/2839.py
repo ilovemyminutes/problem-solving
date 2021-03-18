@@ -1,4 +1,6 @@
-'''설탕 배달, https://www.acmicpc.net/problem/2839'''
+"""설탕 배달, https://www.acmicpc.net/problem/2839"""
+
+
 def get_least_bag(N):
     max_5 = N // 5
     max_3 = (N - max_5 * 5) // 3

@@ -1,4 +1,4 @@
-'''두 동전, https://www.acmicpc.net/problem/16197
+"""두 동전, https://www.acmicpc.net/problem/16197
 o: 동전
 .: 빈칸
 #: 벽
@@ -10,7 +10,8 @@ o: 동전
 o#
 o#
 ##
-'''
+"""
+
 
 def move(coins: list, direction: str, board: list):
     """코인을 이동하는 함수
@@ -22,11 +23,11 @@ def move(coins: list, direction: str, board: list):
 
     Returns:
         [type]: [description]
-    """    
+    """
     return board
-    
 
-N, M = map(int, input().split(' ')) # 세로, 가로
+
+N, M = map(int, input().split(" "))  # 세로, 가로
 board = list()
 coins = list()
 n_clicks = 0
@@ -34,7 +35,6 @@ n_clicks = 0
 for y in range(N):
     status = list(input())
     for x, s in enumerate(status):
-        if 'o' == s:
+        if "o" == s:
             coins.append([y, x])
     board.append(list(input()))
-    

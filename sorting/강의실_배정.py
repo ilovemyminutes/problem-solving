@@ -1,8 +1,9 @@
-'''https://www.acmicpc.net/problem/11000
+"""https://www.acmicpc.net/problem/11000
 우선순위 큐
-'''
+"""
 import sys
 import copy
+
 
 def get_chain(root_index: tuple, schedules: list) -> list:
     s0, t0 = schedules.pop(root_index)
@@ -18,7 +19,8 @@ def get_chain(root_index: tuple, schedules: list) -> list:
         if idx == len(schedules[root_index:]) - 1:
             return result
     return result
-    
+
+
 def flatten(array: list) -> list:
     result = []
     for element in array:
@@ -28,9 +30,13 @@ def flatten(array: list) -> list:
             result.append(element)
     return result
 
+
 S, T = 0, -1
 N = int(input())
-schedules = sorted([tuple(map(int, sys.stdin.readline().split())) for _ in range(N)], key=lambda x: x[S])
+schedules = sorted(
+    [tuple(map(int, sys.stdin.readline().split())) for _ in range(N)],
+    key=lambda x: x[S],
+)
 room_dict = dict()
 room_id = 0
 
