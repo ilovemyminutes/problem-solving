@@ -22,12 +22,30 @@ def move(loc, n: int, m: int):
     return movable_list
 
 
-def bfs(graph: list, n, m) -> int:
+def get_shortest_path_len(graph: list, n, m) -> int:
+    """BFS를 활용해 최단 경로를 리턴
+    [input]
+    101111
+    101010
+    101011
+    111011
+
+    get shortest length
+    [1, 0, 0, 0, 0, 0]
+    [2, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0]
+    [0, 0, 0, 0, 0, 0]
+    ...
+    [1, 0, 9, 10, 11, 12]
+    [2, 0, 8, 0, 12, 0]
+    [3, 0, 7, 0, 13, 14]
+    [4, 5, 6, 0, 14, 15]
+    """
     start = (0, 0)
     path = [[0] * m for _ in range(n)]
 
     que = deque([start])
-    path[start[0]][start[0]] = 1
+    path[start[0]][start[0]] = 1  # depth = 1
 
     while que:
         current = que.popleft()
@@ -35,6 +53,11 @@ def bfs(graph: list, n, m) -> int:
             if path[x][y] == 0 and graph[x][y] == 1:
                 path[x][y] = path[current[0]][current[1]] + 1
                 que.append((x, y))
+
+        # To check path graph
+        # for row in path:
+        #     print(row)
+        # print()
 
     return path[-1][-1]
 
@@ -45,4 +68,4 @@ graph = []
 for _ in range(n):
     graph.append(list(map(int, list(sys.stdin.readline())[:-1])))
 
-print(bfs(graph, n, m))
+print(get_shortest_path_len(graph, n, m))
