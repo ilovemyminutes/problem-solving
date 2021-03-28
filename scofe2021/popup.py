@@ -24,13 +24,3 @@ for p in permutations(directions, r=len(directions)):
         max_n_clothes = n_clothes
 
 print(max_n_clothes)
-
-
-
-
-
-#%%
-from functools import reduce
-temp = [i for i in range(10000, 10100)]
-temp2 = [i for i in range(1, 101)]
-reduce(lambda x, y: x*y, temp) / 
