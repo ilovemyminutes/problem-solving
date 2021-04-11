@@ -311,6 +311,14 @@ print(smallest_k([4, 1, 7, 3, 8, 5], 3)) # 4
         * Immutable(`tuple`, `int`, `float`, `str` 등): Call by Value. 함수 내에서 global 변수를 수정할 수 없음
         * Mutable(`list`, `dict` , `set`등): Call by Reference. 함수 내에서 global 변수를 수정할 수 있음
 
+#### Stack Overflow
+
+- 스택 자료구조에서 주어진 스택 메모리보다 데이터를 더 넣었을 경우 발생하는 문제
+  - 반대로, 스택 메모리가 비어있는데 꺼내려고 하는 경우 Stack Underflow 문제 발생
+- 재귀 함수와 Stack Overflow: 함수를 연이어 호출하면 스택처럼 메모리에 쌓이며, 역순으로 하나씩 실행되는데, 스택 메모리 안에 이러한 함수가 너무 많이 쌓이면 Stack Overflow 문제가 발생함.가령 [백준 1904 문제](https://www.acmicpc.net/problem/1904)에서도 단순히 DP를 재귀문으로 구현하면 이러한 문제가 발생.
+- (추가) 재귀 함수는 Stack Overflow 문제가 있고 반복문에 비해 성능도 떨어지지만, 반복문에 비해 코드 가독성이 높기 때문에 채택하는 경우가 많음. 더군다나 주요 알고리즘이 재귀로 작성되는 경우가 많아 재귀를 잘 이해하는 것이 중요함.
+- References. [자료구조(스택, stack)](https://www.zerocho.com/category/Algorithm/post/5800b79e1dfb250015c38db6), [재귀(Recursion)](https://velog.io/@dion/recursion)
+
 ## Functions
 ### collections
 #### deque
