@@ -27,7 +27,6 @@ n = int(input())
 print(calc_cases(n))
     
 
-
 # Memory Error      
 # dp = [None for _ in range(1000001)]
 
