@@ -1,9 +1,5 @@
 """피보나치 함수 https://www.acmicpc.net/problem/1003"""
-import sys
-
-
-# [(zero_cnt for a_k, one_cnt for a_k) | k = 0, 1, ..., 40]
-dp = [None for _ in range(41)]
+dp = [None for _ in range(41)] # [(zero_cnt for a_k, one_cnt for a_k) | k = 0, 1, ..., 40]
 
 def calc_zero_one(n: int) -> tuple:
     global dp
