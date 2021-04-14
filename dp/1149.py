@@ -1,4 +1,7 @@
-"""문제 출처: https://www.acmicpc.net/problem/1149"""
+"""문제 출처: https://www.acmicpc.net/problem/1149
+현재층에서 선택된 위치의 대각선 왼/오른쪽만 선택 가능
+
+"""
 
 import sys
 n = int(input())
