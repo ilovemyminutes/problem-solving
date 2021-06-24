@@ -37,7 +37,6 @@ if integer_frame:
     expression.append(int(integer_frame))
 
 
-
 # 뺄셈이 한번도 없을 경우
 if '-' not in expression:
     answer = sum(expression)
