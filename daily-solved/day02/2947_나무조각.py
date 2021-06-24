@@ -19,33 +19,30 @@ def print_output(woods):
     output = list(map(str, woods))
     print(' '.join(output))
 
-
+def swap(idx1, idx2) -> None:
+    tmp = woods[idx1]
+    woods[idx1] = woods[idx2]
+    woods[idx2] = tmp
+    
+# 바꿀 조각이 없는 경우
 if woods == ideal:
     pass
 else:
     while True:
         if woods[0] > woods[1]:
-            tmp = woods[0]
-            woods[0] = woods[1]
-            woods[1] = tmp
+            swap(0, 1)
             print_output(woods)
 
         if woods[1] > woods[2]:
-            tmp = woods[1]
-            woods[1] = woods[2]
-            woods[2] = tmp
+            swap(1, 2)
             print_output(woods)
         
         if woods[2] > woods[3]:
-            tmp = woods[2]
-            woods[2] = woods[3]
-            woods[3] = tmp
+            swap(2, 3)
             print_output(woods)
 
         if woods[3] > woods[4]:
-            tmp = woods[3]
-            woods[3] = woods[4]
-            woods[4] = tmp
+            swap(3, 4)
             print_output(woods)
 
         if woods == ideal:
