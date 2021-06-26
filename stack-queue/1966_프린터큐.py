@@ -17,6 +17,7 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
+# initialize
 t = int(input())
 tests = []
 
@@ -27,6 +28,7 @@ for _ in range(t):
     tmp = dict(n=n, m=m, sequence=sequence, indices=indices)
     tests.append(tmp)
 
+# solve
 for test in tests:
     n, m = test['n'], test['m'] # num documents, target idx
     sequence = deque(test['sequence'])
@@ -35,10 +37,14 @@ for test in tests:
     while sequence:
         popped = sequence.popleft()
         idx = indices.popleft()
+
+        # 꺼낸 문서의 중요도가 남은 문서들의 그것보다 모두 크거나 같을 경우 => 프린트
         if all(s <= popped for s in sequence):
             if idx == m:
                 break
             print_order += 1
+        
+        # 꺼낸 문서의 중요도가 남은 문서들의 그것보다 모두 작을 경우 => 끝으로 이동
         else:
             sequence.append(popped)
             indices.append(idx)
