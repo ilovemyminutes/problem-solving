@@ -11,8 +11,17 @@ for _ in range(t):
     n = int(input())
     test = [tuple(map(int, input().split())) for _ in range(n)] # (서류, 면접)
     tests.append(test)
-    
 
-
+for test in tests:
+    num_members = 0
+    test.sort(key=lambda x: x[0])
+    for idx in range(len(test)):
+        if idx == 0:
+            max_interview_rank = test[idx][1]
+            num_members += 1
+        elif max_interview_rank > test[idx][1]:
+            max_interview_rank = test[idx][1]
+            num_members += 1        
+    print(num_members)
 
 
